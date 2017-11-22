@@ -1,0 +1,52 @@
+<div class="main-content">
+  <div class="loading-section" *ngIf="!item">
+    <div class="loader">
+      Loading...
+    </div>
+  </div>
+  <div *ngIf="item" class="item">
+    <div class="mobile item-header">
+      <p class="title-block">
+        <span class="back-button" (click)="goBack()"></span>
+        <a *ngIf="item.url.indexOf('http://') === 0 || item.url.indexOf('https://') === 0" href="{{item.url}}" class="title">
+          {{item.title}}
+        </a>
+        <a *ngIf="item.url.indexOf('http://') !== 0 && item.url.indexOf('https://') !== 0" class="title" [routerLink]="['/item', item.id]" routerLinkActive="active">
+          {{item.title}}
+        </a>
+      </p>
+    </div>
+    <div class="laptop" [class.item-header]="item.comments_count > 0 || item.type === 'job'" [class.head-margin]="item.text">
+      <p>
+        <a href="{{item.url}}" class="title">
+          {{item.title}}
+        </a>
+        <span *ngIf="item.domain" class="domain">({{item.domain}})</span>
+      </p>
+      <div class="subtext">
+        <span>
+          {{item.points}} points by
+           <a href="">{{item.user}}</a>
+        </span>
+        <span>
+          {{item.time_ago}}
+          <span>
+            <a [routerLink]="['/item', item.id]">
+              <span *ngIf="item.comments_count !== 0">
+                {{item.comments_count}}
+                <span *ngIf="item.comments_count === 1">comment</span>
+                <span *ngIf="item.comments_count > 1">comments</span>
+              </span>
+              <span *ngIf="item.comments_count === 0">discuss</span>
+            </a>
+          </span>
+        </span>
+      </div>
+    </div>
+    <p class="subject" [innerHTML]="item.content"></p>
+    <app-comment-tree [commentTree]="item.comments"></app-comment-tree>
+  </div>
+</div>
+
+<!-- display item details, followed by their description {item.content}
+      input entire comments object to CommentTreeComponent selector -->
