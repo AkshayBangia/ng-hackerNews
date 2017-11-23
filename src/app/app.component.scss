@@ -2,26 +2,26 @@
 
 $mobile-only: "only screen and (max-width:768px)";
 
-body {
-  margin-bottom: 0;
-
-  @media #{$mobile-only} {
-    margin: 0;
-  }
-}
+// body {
+//   margin-bottom: 0;
+//
+//   @media #{$mobile-only} {
+//     margin: 0;
+//   }
+// }
 
 #wrapper {
-  background: #f6f6ef;
+  background-color: #f6f6ef;
   position: relative;
   width: 85%;
   min-height: 80px;
   margin: 0 auto;
-  font-family: "Open Sans Semibold";
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif","Open Sans";
   font-size: 15px;
   height: 100%;
-}
 
-@media #{$mobile-only} {
-  width: 100%;
-  background: #fff;
+  @media #{$mobile-only} {
+    width: 100%;
+    background-color: #fff;
+  }
 }
