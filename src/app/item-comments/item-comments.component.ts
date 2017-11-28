@@ -20,11 +20,17 @@ export class ItemCommentsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scrollTo(0,0);
+
     this.sub = this.route.params.subscribe(params => {
       let itemID = +params['id'];
       this._hackerNewsAPIService.fetchItemContent(itemID).subscribe(data => {
         this.item = data;
       }, error => console.log('Could not load item' + itemID));
     });
+  }
+
+  goBack() {
+    this._location.back();
   }
 }
