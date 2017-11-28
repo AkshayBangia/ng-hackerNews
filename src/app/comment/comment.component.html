@@ -9,7 +9,7 @@
       <p class="comment-text" [innerHTML]="comment.content"></p>
       <ul class="subtree">
         <li *ngFor="let subComment of comment.comments">
-        <app-comment [comment]="subComment"></app-comment>
+          <app-comment [comment]="subComment"></app-comment>
         </li>
       </ul>
     </div>

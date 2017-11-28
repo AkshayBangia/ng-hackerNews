@@ -1,27 +1,27 @@
 <header>
   <div id="header">
-    <a class="home-link" routerLink="/news/1">
+    <a class="home-link" routerLink="/news/1" routerLinkActive="active" (click)="scrollTop()">
   <img src="https://i.imgur.com/J303pQ4.png" class="logo">
   </a>
     <div class="header-text">
       <div class="left">
         <h1 class="name">
-        <a class="app-title" routerLink="/news/1">Hacker News</a>
+        <a class="app-title" routerLink="/news/1" routerLinkActive="active" (click)="scrollTop()">Hacker News</a>
       </h1>
         <span class="header-nav">
-        <a routerLink="/newest/1">new</a>
+        <a routerLink="/newest/1" routerLinkActive="active" (click)="scrollTop()">new</a>
         <span class="divider">
           |
         </span>
-        <a routerLink="/show/1">show</a>
+        <a routerLink="/show/1" routerLinkActive="active" (click)="scrollTop()">show</a>
         <span class="divider">
           |
         </span>
-        <a routerLink="/ask/1">ask</a>
+        <a routerLink="/ask/1" routerLinkActive="active" (click)="scrollTop()">ask</a>
         <span class="divider">
           |
         </span>
-        <a routerLink="/jobs/1">jobs</a>
+        <a routerLink="/jobs/1" routerLinkActive="active" (click)="scrollTop()">jobs</a>
         </span>
       </div>
     </div>

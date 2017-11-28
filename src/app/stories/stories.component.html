@@ -1,17 +1,23 @@
 <div class="main-content">
-  <div class="laoding-section" *ngIf="!items">
-    <!-- Add a loading indicator here -->
+  <p class="job-header" *ngIf="storiesType === 'jobs'">
+    These are the jobs at startups that were funded by <span style="font-weight: bold">Y combinator</span>.
+  </p>
+  <div class="loading-section" *ngIf="!items">
+    <div class="loader">
+      Loading...
+    </div>
   </div>
   <div *ngIf="items">
-    <ol start="{{listStart}}">
+    <ol *ngIf="storiesType !== 'new'" [class.list-margin]="storiesType !== 'jobs'" start="{{ listStart }}">
       <li *ngFor="let item of items" class="post">
         <item class="item-block" [item]="item"></item>
       </li>
     </ol>
     <div class="nav">
-      <a *ngIf="listStart !== 1" [routerLink]="['/' + storiesType, pageNum - 1]" class="prev">
-        < Prev </a>
-          <a *ngIf="items.length === 30" [routerLink]="[ '/' + storiesType, pageNum + 1]" class="more">
+      <a *ngIf="listStart !== 1" [routerLink]="['/' + storiesType, pageNum - 1]" class="prev" routerLinkActive="active">
+        < Prev 
+      </a>
+          <a *ngIf="items.length === 30" [routerLink]="['/' + storiesType, pageNum + 1]" class="more" routerLinkActive="active">
       More >
     </a>
     </div>
