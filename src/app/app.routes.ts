@@ -12,7 +12,7 @@ const routes: Routes = [
   { path : 'newest/:page', component: StoriesComponent, data: {storiesType: 'newest'} },
   { path : 'show/:page', component: StoriesComponent, data: {storiesType: 'show'} },
   { path : 'ask/:page', component: StoriesComponent, data: {storiesType: 'ask'} },
-  { path : 'job/:page', component: StoriesComponent, data: {storiesType: 'jobs'} },
+  { path : 'jobs/:page', component: StoriesComponent, data: {storiesType: 'jobs'} },
   { path : 'item/:id', component: ItemCommentsComponent },
   { path : 'user/:id', component: UserComponent }
 ];
